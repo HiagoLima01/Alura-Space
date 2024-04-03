@@ -2,6 +2,25 @@ from django.db import models
 from datetime import datetime
 
 class Fotografia(models.Model):
+    """
+    Classe para representar a relação de Fotografia no banco de dados
+
+    Atributos:
+
+        nome:str                      Nome da foto
+        legenda:str                   Legenda da foto
+        OPCOES_CATEGORIA:boolean      Lista com as possiveis categorias presentes no site
+        categoria;str                 Categoria da foto
+        descricao:str                 Descricao da foto
+        foto:srt                      Campo para upload de fotos
+        publicado:boolean             Campo boleano para definir se uma foto é publicada ou não
+        data_fotografia:datetima      Coleta a data do momento do post
+    
+    Métodos:
+
+        
+    
+    """
 
     OPCOES_CATEGORIA = [
         ('NEBULOSA', 'Nebulosa'),
