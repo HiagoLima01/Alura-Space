@@ -1,8 +1,6 @@
-{% extends 'galeria/base.html'%}
+{% extends 'galeria/base.html' %}
 {% load static %}
-
-<body>
-    {% block content%}
+{% block content %}
             <section class="conteudo">
                 <section class="banner">
                     <img class="banner__imagem" src="{% static '/assets/imagens/Banner(2).png' %}" alt="banner Alura Space">
@@ -17,19 +15,19 @@
                         <li class="tags__tag">Planeta</li>
                     </ul>
                 </section>
-                <section class="galeria">                    
+                <section class="galeria">
                     <div class="cards">
                         <h2 class="cards__titulo">Navegue pela galeria</h2>
                         <ul class="cards__lista">
                             {% if cards %}
                             {% for fotografia in cards %}
-                            <li class="card">                               
+                            <li class="card">
                                 <a href="{% url 'imagem' fotografia.id %}">
                                 {% if fotografia.foto == "" or fotografia.foto == null %}
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/icon-image-not-found-free-vector.jpg'%}" alt="foto">
+                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/not-found.png'%}" alt="foto">
                                 {% else %}
-                                    <img class="card__imagem" src="{{fotografia.foto.url}}" alt="foto">
-                                {%endif%}
+                                    <img class="card__imagem" src="{{ fotografia.foto.url }}" alt="foto">
+                                {% endif %}
                                 </a>
                                 <span class="card__tag">Estrelas</span>
                                 <div class="card__info">
@@ -49,12 +47,9 @@
                             </div>
                             {% endif %}
                         </ul>
-                    </div>                   
+                    </div>
                 </section>
             </section>
         </main>
     </div>
-    {%endblock%}
-</body>
-
-</html>
+{% endblock %}
