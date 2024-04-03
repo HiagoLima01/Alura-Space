@@ -339,7 +339,12 @@ table {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    color: #FFFFFF;
+    color: #FFFFFF;  
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    position: fixed;
 }
 
 .rodape__icones {
